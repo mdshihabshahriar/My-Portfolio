@@ -315,8 +315,10 @@
                                             </li>
                                             <li>
                                                 <span class="title">Email :</span>
-                                                <span
-                                                    class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block">shihabshahriar.contact@gmail.com</span>
+                                                <span class="value d-block d-sm-inline-block d-lg-block d-xl-inline-block" 
+                                                style="overflow-wrap: break-word; max-width: 100%;">
+                                            shihabshahriar.contact@gmail.com
+                                                </span>
                                             </li>
                                             <li>
                                                 <span class="title">Linkedin :</span>
@@ -1098,8 +1100,9 @@
         </div>
         <!-- Blog Ends -->
     </div>
-    <!-- =========================================================
-   SHIHAB'S AI CHATBOT — FLOATING WIDGET (Gemini Powered)
+
+<!-- =========================================================
+   SHIHAB'S AI CHATBOT — FLOATING WIDGET (Language Switcher)
    এই পুরো code টা তোমার index.html এর </body> এর আগে paste করো
    ========================================================= -->
 
@@ -1111,12 +1114,12 @@
   border: none; cursor: pointer; z-index: 9999;
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 4px 24px rgba(124,106,255,0.5);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s;
   animation: ss-pulse 2.5s infinite;
 }
-#ss-chat-btn:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(124,106,255,0.7); }
+#ss-chat-btn:hover { transform: scale(1.1); }
 @keyframes ss-pulse {
-  0%,100% { box-shadow: 0 4px 24px rgba(124,106,255,0.5), 0 0 0 0 rgba(124,106,255,0.4); }
+  0%,100% { box-shadow: 0 4px 24px rgba(124,106,255,0.5), 0 0 0 0 rgba(124,106,255,0.3); }
   50%      { box-shadow: 0 4px 24px rgba(124,106,255,0.5), 0 0 0 10px rgba(124,106,255,0); }
 }
 #ss-chat-btn svg { width: 26px; height: 26px; fill: white; }
@@ -1125,11 +1128,11 @@
   width: 18px; height: 18px; background: #ff4466;
   border-radius: 50%; border: 2px solid white;
   font-size: 10px; color: white; font-weight: 700;
-  display: flex; align-items: center; justify-content: center; font-family: sans-serif;
+  display: flex; align-items: center; justify-content: center;
 }
 #ss-chat-window {
   position: fixed; bottom: 100px; right: 28px;
-  width: 370px; height: 520px;
+  width: 370px; height: 560px;
   background: #12121a; border: 1px solid #2a2a3d; border-radius: 20px;
   display: flex; flex-direction: column; z-index: 9998;
   box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(124,106,255,0.1);
@@ -1139,40 +1142,49 @@
 }
 #ss-chat-window.ss-open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
 #ss-chat-header {
-  padding: 14px 18px; background: #1a1a26; border-bottom: 1px solid #2a2a3d;
-  display: flex; align-items: center; gap: 12px; position: relative; flex-shrink: 0;
+  padding: 12px 16px; background: #1a1a26; border-bottom: 1px solid #2a2a3d;
+  display: flex; align-items: center; gap: 10px; position: relative; flex-shrink: 0;
 }
 #ss-chat-header::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
   background: linear-gradient(90deg, transparent, #7c6aff, #ff6a9e, transparent);
 }
 .ss-h-av {
-  width: 38px; height: 38px; border-radius: 50%;
+  width: 36px; height: 36px; border-radius: 50%;
   background: linear-gradient(135deg, #7c6aff, #ff6a9e);
   display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 700; color: white; font-family: monospace;
+  font-size: 12px; font-weight: 700; color: white; font-family: monospace;
   position: relative; flex-shrink: 0;
 }
 .ss-h-av::after {
   content: ''; position: absolute; bottom: 1px; right: 1px;
-  width: 9px; height: 9px; background: #3dff8a;
+  width: 8px; height: 8px; background: #3dff8a;
   border-radius: 50%; border: 2px solid #1a1a26;
 }
-.ss-h-info strong { display: block; font-size: 13px; color: #e8e8f0; font-family: monospace; }
-.ss-h-info span { font-size: 11px; color: #7a7a9a; }
+.ss-h-info strong { display: block; font-size: 12px; color: #e8e8f0; font-family: monospace; }
+.ss-h-info span { font-size: 10px; color: #7a7a9a; }
+#ss-lang-btn {
+  margin-left: auto;
+  background: rgba(124,106,255,0.15);
+  border: 1px solid rgba(124,106,255,0.4);
+  border-radius: 20px; padding: 4px 10px;
+  cursor: pointer; font-size: 12px; color: #b8aaff;
+  transition: all 0.2s; white-space: nowrap;
+}
+#ss-lang-btn:hover { background: rgba(124,106,255,0.25); border-color: #7c6aff; }
 #ss-close-btn {
-  margin-left: auto; background: none; border: none; cursor: pointer;
-  color: #7a7a9a; font-size: 20px; padding: 4px; border-radius: 6px; transition: color 0.2s;
+  background: none; border: none; cursor: pointer;
+  color: #7a7a9a; font-size: 18px; padding: 4px; transition: color 0.2s; margin-left: 4px;
 }
 #ss-close-btn:hover { color: #e8e8f0; }
 #ss-messages {
-  flex: 1; overflow-y: auto; padding: 16px 14px;
+  flex: 1; overflow-y: auto; padding: 14px 12px;
   display: flex; flex-direction: column; gap: 12px;
   scrollbar-width: thin; scrollbar-color: #2a2a3d transparent;
 }
 #ss-messages::-webkit-scrollbar { width: 3px; }
 #ss-messages::-webkit-scrollbar-thumb { background: #2a2a3d; border-radius: 3px; }
-.ss-msg { display: flex; gap: 8px; max-width: 90%; animation: ss-up 0.25s ease; }
+.ss-msg { display: flex; gap: 8px; max-width: 92%; animation: ss-up 0.25s ease; }
 @keyframes ss-up { from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);} }
 .ss-msg.ss-user { margin-left: auto; flex-direction: row-reverse; }
 .ss-av {
@@ -1182,14 +1194,28 @@
 }
 .ss-bot .ss-av { background: linear-gradient(135deg, #7c6aff, #ff6a9e); color: white; }
 .ss-user .ss-av { background: #1a1a26; color: #7a7a9a; border: 1px solid #2a2a3d; }
-.ss-bub { padding: 10px 14px; border-radius: 14px; font-size: 13px; line-height: 1.6; color: #e8e8f0; }
-.ss-bot .ss-bub  { background: #16162a; border: 1px solid #2a2a3d; border-top-left-radius: 3px; }
+.ss-bub { padding: 10px 13px; border-radius: 14px; font-size: 13px; line-height: 1.65; color: #e8e8f0; }
+.ss-bot .ss-bub { background: #16162a; border: 1px solid #2a2a3d; border-top-left-radius: 3px; }
 .ss-user .ss-bub {
   background: linear-gradient(135deg,rgba(124,106,255,0.25),rgba(124,106,255,0.15));
   border: 1px solid rgba(124,106,255,0.3); border-top-right-radius: 3px;
 }
 .ss-bub a { color: #9d8fff; text-decoration: none; }
 .ss-bub strong { color: #b8aaff; }
+.ss-switch-hint {
+  background: rgba(124,106,255,0.12);
+  border: 1px solid rgba(124,106,255,0.3);
+  border-radius: 12px; padding: 10px 13px;
+  font-size: 12px; color: #b8aaff; line-height: 1.5;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.ss-switch-hint-btn {
+  background: linear-gradient(135deg, #7c6aff, #ff6a9e);
+  border: none; border-radius: 10px; padding: 4px 12px;
+  color: white; font-size: 11px; cursor: pointer; font-family: inherit;
+  transition: opacity 0.2s; margin-top: 4px;
+}
+.ss-switch-hint-btn:hover { opacity: 0.85; }
 .ss-dots { display:flex; gap:4px; align-items:center; padding:3px 0; }
 .ss-dots span {
   width:5px; height:5px; background:#7c6aff; border-radius:50%;
@@ -1198,20 +1224,23 @@
 .ss-dots span:nth-child(2){animation-delay:0.2s;}
 .ss-dots span:nth-child(3){animation-delay:0.4s;}
 @keyframes ss-blink{0%,100%{opacity:0.3;transform:scale(0.8);}50%{opacity:1;transform:scale(1.1);}}
-#ss-quick { display:flex; flex-wrap:wrap; gap:6px; padding:4px 14px 10px; }
+#ss-quick {
+  display:flex; flex-wrap:wrap; gap:5px; padding:8px 12px;
+  border-top: 1px solid #2a2a3d; background: #0f0f1a; flex-shrink: 0;
+}
 .ss-qr {
   background:transparent; border:1px solid #2a2a3d; color:#7a7a9a;
-  padding:5px 11px; border-radius:20px; font-size:11px;
+  padding:4px 10px; border-radius:20px; font-size:11px;
   font-family:inherit; cursor:pointer; transition:all 0.2s;
 }
 .ss-qr:hover { border-color:#7c6aff; color:#9d8fff; background:rgba(124,106,255,0.08); }
 #ss-input-area {
-  padding:10px 14px; border-top:1px solid #2a2a3d; background:#1a1a26;
+  padding:10px 12px; border-top:1px solid #2a2a3d; background:#1a1a26;
   display:flex; gap:8px; align-items:flex-end; flex-shrink:0;
 }
 #ss-input {
   flex:1; background:#0a0a0f; border:1px solid #2a2a3d; border-radius:10px;
-  padding:9px 12px; color:#e8e8f0; font-family:inherit; font-size:13px;
+  padding:8px 12px; color:#e8e8f0; font-family:inherit; font-size:13px;
   resize:none; outline:none; max-height:80px; line-height:1.4; transition:border-color 0.2s;
 }
 #ss-input:focus { border-color:#7c6aff; }
@@ -1223,7 +1252,6 @@
   transition:all 0.2s; box-shadow:0 3px 12px rgba(124,106,255,0.35);
 }
 #ss-send:hover { transform:scale(1.07); }
-#ss-send:disabled { opacity:0.4; cursor:not-allowed; transform:none; }
 #ss-send svg { width:14px; height:14px; fill:white; }
 @media(max-width:420px){
   #ss-chat-window{width:calc(100vw - 20px);right:10px;bottom:90px;}
@@ -1231,32 +1259,25 @@
 }
 </style>
 
-<!-- Floating Button -->
 <button id="ss-chat-btn" title="Chat with Shihab's Assistant">
   <span id="ss-badge">1</span>
   <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/></svg>
 </button>
 
-<!-- Chat Window -->
 <div id="ss-chat-window">
   <div id="ss-chat-header">
     <div class="ss-h-av">SS</div>
     <div class="ss-h-info">
       <strong>SHIHAB'S ASSISTANT</strong>
-      <span>Ask me anything • Always online</span>
+      <span id="ss-subtitle">Ask me anything • Always online</span>
     </div>
-    <button id="ss-close-btn">✕</button>
+    <button id="ss-lang-btn" onclick="ssToggleLang()">🇧🇩 বাংলা</button>
+    <button id="ss-close-btn">&#x2715;</button>
   </div>
   <div id="ss-messages"></div>
-  <div id="ss-quick">
-    <button class="ss-qr" onclick="ssQuick('skills')">🛠 Skills</button>
-    <button class="ss-qr" onclick="ssQuick('projects')">💼 Projects</button>
-    <button class="ss-qr" onclick="ssQuick('hire')">📩 Hire Me</button>
-    <button class="ss-qr" onclick="ssQuick('education')">🎓 Education</button>
-  </div>
+  <div id="ss-quick"></div>
   <div id="ss-input-area">
-    <textarea id="ss-input" placeholder="যেকোনো প্রশ্ন করো..." rows="1"
-      onkeydown="ssKey(event)" oninput="ssResize(this)"></textarea>
+    <textarea id="ss-input" rows="1" onkeydown="ssKey(event)" oninput="ssResize(this)"></textarea>
     <button id="ss-send" onclick="ssSend()">
       <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
     </button>
@@ -1264,14 +1285,114 @@
 </div>
 
 <script>
-var SS_QUICK = {
-  skills:    'Shihab-এর skills:<br><br>• <strong>HTML</strong> — 89%<br>• <strong>CSS</strong> — 85%<br>• <strong>C++</strong> — 85%<br>• <strong>C</strong> — 80%<br>• <strong>Python</strong> — 66%<br>• <strong>JavaScript</strong> — 65%<br>• <strong>Django</strong> — 65%<br>• <strong>Database</strong> — 65%',
-  projects:  'Notable projects:<br><br>📚 <strong>Library Management</strong> – Django<br><a href="https://library-management-fqjv.onrender.com/" target="_blank">🔗 Live Demo</a><br><br>🏦 <strong>Bank Management</strong> – Django<br><a href="https://bank-management-5f7y.onrender.com/" target="_blank">🔗 Live Demo</a><br><br>🛡️ <strong>Security Service</strong><br><a href="https://securityservice1.netlify.app/" target="_blank">🔗 Live Demo</a><br><br>🍽️ <strong>Meal Finder</strong><br><a href="https://mealfind.netlify.app/" target="_blank">🔗 Live Demo</a><br><br>🏅 <strong>Sports Shop</strong><br><a href="https://online-shopping100.netlify.app/" target="_blank">🔗 Live Demo</a>',
-  hire:      'Shihab <strong>freelance-এর জন্য available</strong>! 🎉<br><br>📧 <a href="mailto:shihabshahriar.contact@gmail.com">shihabshahriar.contact@gmail.com</a><br>📞 +880 1703 347089<br>💼 <a href="https://linkedin.com/in/mdshihabshahriar" target="_blank">LinkedIn: mdshihabshahriar</a>',
-  education: '📚 শিক্ষাগত যোগ্যতা:<br><br>🎓 <strong>BSc CSE</strong> — AIUB (2023–Present)<br>📘 <strong>HSC</strong> — Govt. Yasin College (2022)<br>📗 <strong>SSC</strong> — Faridpur Zilla School (2020)'
+var ssLang = 'en';
+
+var SS_DATA = {
+  en: {
+    greeting: "Hey! 👋 I'm Shihab's assistant.<br>Click the buttons or type any question!",
+    placeholder: "Ask me anything...",
+    subtitle: "Ask me anything • Always online",
+    langBtn: "🇧🇩 বাংলা",
+    notFound: "I don't have info on that. Try the quick buttons or email Shihab:<br><br>📧 <a href='mailto:shihabshahriar.contact@gmail.com'>shihabshahriar.contact@gmail.com</a>",
+    switched: "Switched to English! 🇬🇧 How can I help you?",
+    detectHint: "It looks like you're writing in Bengali! Want to switch?",
+    detectBtn: "🇧🇩 Switch to Bengali",
+    buttons: [
+      {key:'about', label:'👤 About'},
+      {key:'skills', label:'🛠 Skills'},
+      {key:'projects', label:'💼 Projects'},
+      {key:'education', label:'🎓 Education'},
+      {key:'hire', label:'📩 Hire Me'},
+      {key:'contact', label:'📞 Contact'}
+    ],
+    answers: {
+      about:     '<strong>MD. Shihab Shahriar</strong> — Full-Stack Developer 👨‍💻<br><br>Pursuing BSc in CSE at AIUB (2023–Present). Skilled in Python, Django & Web Development. Based in Dhaka, Bangladesh. Available for freelance!<br><br>✅ 1 year experience &nbsp;|&nbsp; 9 projects &nbsp;|&nbsp; 5 happy clients',
+      skills:    '<strong>Skills:</strong><br><br>🔸 <strong>HTML</strong> ━━━━━━━━━ 89%<br>🔸 <strong>CSS</strong> ━━━━━━━━━ 85%<br>🔸 <strong>C++</strong> ━━━━━━━━━ 85%<br>🔸 <strong>C</strong> ━━━━━━━━ 80%<br>🔸 <strong>Python</strong> ━━━━━━ 66%<br>🔸 <strong>JavaScript</strong> ━━━━━━ 65%<br>🔸 <strong>Django</strong> ━━━━━━ 65%<br>🔸 <strong>Database</strong> ━━━━━━ 65%',
+      projects:  '<strong>Projects:</strong><br><br>📚 <strong>Library Management</strong> — Django<br><a href="https://library-management-fqjv.onrender.com/" target="_blank">🔗 Live Demo</a><br><br>🏦 <strong>Bank Management</strong> — Django<br><a href="https://bank-management-5f7y.onrender.com/" target="_blank">🔗 Live Demo</a><br><br>🛡️ <strong>Security Service</strong><br><a href="https://securityservice1.netlify.app/" target="_blank">🔗 Live Demo</a><br><br>🍽️ <strong>Meal Finder</strong><br><a href="https://mealfind.netlify.app/" target="_blank">🔗 Live Demo</a><br><br>🏅 <strong>Sports Shop</strong><br><a href="https://online-shopping100.netlify.app/" target="_blank">🔗 Live Demo</a>',
+      education: '<strong>Education:</strong><br><br>🎓 <strong>BSc in CSE</strong> — AIUB (2023–Present)<br>📘 <strong>HSC</strong> — Govt. Yasin College (2022)<br>📗 <strong>SSC</strong> — Faridpur Zilla School (2020)',
+      hire:      'Shihab is <strong>available for freelance!</strong> 🎉<br><br>📧 <a href="mailto:shihabshahriar.contact@gmail.com">shihabshahriar.contact@gmail.com</a><br>📞 <a href="tel:+8801703347089">+880 1703 347089</a><br>💼 <a href="https://linkedin.com/in/mdshihabshahriar" target="_blank">LinkedIn: mdshihabshahriar</a>',
+      contact:   '📬 <strong>Contact Shihab:</strong><br><br>📧 <a href="mailto:shihabshahriar.contact@gmail.com">shihabshahriar.contact@gmail.com</a><br>📞 <a href="tel:+8801703347089">+880 1703 347089</a><br>💼 <a href="https://linkedin.com/in/mdshihabshahriar" target="_blank">mdshihabshahriar</a><br>📍 Dhaka, Bangladesh'
+    },
+    keywords: [
+      {keys:['skill','html','css','python','django','javascript','c++','database','programming','language','technology'],topic:'skills'},
+      {keys:['project','portfolio','work','app','website','library','bank','meal','sport','security','demo'],topic:'projects'},
+      {keys:['education','study','university','degree','school','college','aiub','cse','hsc','ssc','student'],topic:'education'},
+      {keys:['hire','freelance','available','job','employ','recruit'],topic:'hire'},
+      {keys:['contact','phone','email','reach','call','linkedin'],topic:'contact'},
+      {keys:['who','about','introduce','shihab','background','experience','developer','age','location','dhaka'],topic:'about'}
+    ]
+  },
+  bn: {
+    greeting: "হ্যালো! 👋 আমি Shihab-এর assistant।<br>নিচের buttons-এ click করো অথবা বাংলায় প্রশ্ন করো!",
+    placeholder: "যেকোনো প্রশ্ন করো...",
+    subtitle: "যেকোনো প্রশ্ন করো • সবসময় online",
+    langBtn: "🇬🇧 English",
+    notFound: "এই বিষয়ে তথ্য নেই। নিচের buttons ব্যবহার করো বা email করো:<br><br>📧 <a href='mailto:shihabshahriar.contact@gmail.com'>shihabshahriar.contact@gmail.com</a>",
+    switched: "বাংলায় স্বাগতম! 🇧🇩 কিভাবে সাহায্য করতে পারি?",
+    detectHint: "মনে হচ্ছে আপনি English-এ লিখছেন! Switch করবেন?",
+    detectBtn: "🇬🇧 Switch to English",
+    buttons: [
+      {key:'about', label:'👤 পরিচয়'},
+      {key:'skills', label:'🛠 দক্ষতা'},
+      {key:'projects', label:'💼 প্রজেক্ট'},
+      {key:'education', label:'🎓 শিক্ষা'},
+      {key:'hire', label:'📩 কাজ দিন'},
+      {key:'contact', label:'📞 যোগাযোগ'}
+    ],
+    answers: {
+      about:     '<strong>MD. Shihab Shahriar</strong> — Full-Stack Developer 👨‍💻<br><br>AIUB-তে BSc CSE পড়ছেন (২০২৩–বর্তমান)। Python, Django ও Web Development-এ দক্ষ। Dhaka-তে থাকেন, freelance available!<br><br>✅ ১ বছরের অভিজ্ঞতা &nbsp;|&nbsp; ৯টি প্রজেক্ট &nbsp;|&nbsp; ৫ জন সন্তুষ্ট client',
+      skills:    '<strong>দক্ষতা:</strong><br><br>🔸 <strong>HTML</strong> ━━━━━━━━━ ৮৯%<br>🔸 <strong>CSS</strong> ━━━━━━━━━ ৮৫%<br>🔸 <strong>C++</strong> ━━━━━━━━━ ৮৫%<br>🔸 <strong>C</strong> ━━━━━━━━ ৮০%<br>🔸 <strong>Python</strong> ━━━━━━ ৬৬%<br>🔸 <strong>JavaScript</strong> ━━━━━━ ৬৫%<br>🔸 <strong>Django</strong> ━━━━━━ ৬৫%<br>🔸 <strong>Database</strong> ━━━━━━ ৬৫%',
+      projects:  '<strong>প্রজেক্টসমূহ:</strong><br><br>📚 <strong>Library Management</strong> — Django<br><a href="https://library-management-fqjv.onrender.com/" target="_blank">🔗 দেখুন</a><br><br>🏦 <strong>Bank Management</strong> — Django<br><a href="https://bank-management-5f7y.onrender.com/" target="_blank">🔗 দেখুন</a><br><br>🛡️ <strong>Security Service</strong><br><a href="https://securityservice1.netlify.app/" target="_blank">🔗 দেখুন</a><br><br>🍽️ <strong>Meal Finder</strong><br><a href="https://mealfind.netlify.app/" target="_blank">🔗 দেখুন</a><br><br>🏅 <strong>Sports Shop</strong><br><a href="https://online-shopping100.netlify.app/" target="_blank">🔗 দেখুন</a>',
+      education: '<strong>শিক্ষাগত যোগ্যতা:</strong><br><br>🎓 <strong>BSc in CSE</strong> — AIUB (২০২৩–বর্তমান)<br>📘 <strong>HSC</strong> — Govt. Yasin College (২০২২)<br>📗 <strong>SSC</strong> — Faridpur Zilla School (২০২০)',
+      hire:      'Shihab <strong>freelance-এর জন্য available!</strong> 🎉<br><br>📧 <a href="mailto:shihabshahriar.contact@gmail.com">shihabshahriar.contact@gmail.com</a><br>📞 <a href="tel:+8801703347089">+880 1703 347089</a><br>💼 <a href="https://linkedin.com/in/mdshihabshahriar" target="_blank">LinkedIn: mdshihabshahriar</a>',
+      contact:   '📬 <strong>যোগাযোগ:</strong><br><br>📧 <a href="mailto:shihabshahriar.contact@gmail.com">shihabshahriar.contact@gmail.com</a><br>📞 <a href="tel:+8801703347089">+880 1703 347089</a><br>💼 <a href="https://linkedin.com/in/mdshihabshahriar" target="_blank">mdshihabshahriar</a><br>📍 Dhaka, Bangladesh'
+    },
+    keywords: [
+      {keys:['দক্ষতা','skill','html','css','python','django','javascript','c++','database','প্রোগ্রামিং'],topic:'skills'},
+      {keys:['প্রজেক্ট','project','portfolio','কাজ','app','website','library','bank','meal','sport','security'],topic:'projects'},
+      {keys:['শিক্ষা','education','university','degree','school','college','aiub','cse','hsc','ssc','পড়াশোনা'],topic:'education'},
+      {keys:['hire','freelance','কাজ দিন','নিয়োগ','available'],topic:'hire'},
+      {keys:['যোগাযোগ','contact','phone','email','linkedin','call'],topic:'contact'},
+      {keys:['কে','পরিচয়','about','shihab','background','অভিজ্ঞতা','developer','বয়স','dhaka','কোথায়'],topic:'about'}
+    ]
+  }
 };
 
-var ssHistory = [], ssBusy = false, ssOpen = false, ssGreeted = false;
+// Bengali unicode range detector
+function ssIsBengali(text) {
+  return /[\u0980-\u09FF]/.test(text);
+}
+function ssIsEnglish(text) {
+  var englishWords = text.match(/[a-zA-Z]+/g);
+  return englishWords && englishWords.join('').length > 3;
+}
+
+var ssOpen = false, ssGreeted = false, ssSwitchHintShown = false;
+
+function ssD() { return SS_DATA[ssLang]; }
+
+function ssRenderButtons() {
+  var q = document.getElementById('ss-quick');
+  q.innerHTML = '';
+  var btns = ssD().buttons;
+  for (var i = 0; i < btns.length; i++) {
+    var b = document.createElement('button');
+    b.className = 'ss-qr';
+    b.innerHTML = btns[i].label;
+    b.onclick = (function(k) { return function() { ssQuick(k); }; })(btns[i].key);
+    q.appendChild(b);
+  }
+}
+
+function ssToggleLang() {
+  ssLang = ssLang === 'en' ? 'bn' : 'en';
+  document.getElementById('ss-lang-btn').innerHTML = ssD().langBtn;
+  document.getElementById('ss-subtitle').innerHTML = ssD().subtitle;
+  document.getElementById('ss-input').placeholder = ssD().placeholder;
+  ssSwitchHintShown = false;
+  ssRenderButtons();
+  ssAddMsg('bot', ssD().switched);
+}
 
 document.getElementById('ss-chat-btn').onclick = function() {
   ssOpen = !ssOpen;
@@ -1280,9 +1401,9 @@ document.getElementById('ss-chat-btn').onclick = function() {
   document.getElementById('ss-chat-btn').style.animation = ssOpen ? 'none' : 'ss-pulse 2.5s infinite';
   if (ssOpen && !ssGreeted) {
     ssGreeted = true;
-    setTimeout(function() {
-      ssAddMsg('bot', "Hey! 👋 আমি Shihab-এর AI assistant।<br>Quick buttons-এ click করো অথবা যেকোনো প্রশ্ন করো — <strong>বাংলা বা English</strong> দুটোতেই answer দিতে পারবো!");
-    }, 300);
+    ssRenderButtons();
+    document.getElementById('ss-input').placeholder = ssD().placeholder;
+    setTimeout(function() { ssAddMsg('bot', ssD().greeting); }, 300);
   }
   if (ssOpen) document.getElementById('ss-input').focus();
 };
@@ -1299,6 +1420,19 @@ function ssAddMsg(role, html) {
   d.innerHTML = '<div class="ss-av">'+(role==='bot'?'SS':'You')+'</div><div class="ss-bub">'+html+'</div>';
   w.appendChild(d); w.scrollTop = w.scrollHeight;
 }
+
+function ssAddSwitchHint() {
+  var w = document.getElementById('ss-messages');
+  var d = document.createElement('div');
+  d.className = 'ss-msg ss-bot';
+  var targetLang = ssLang === 'en' ? 'bn' : 'en';
+  d.innerHTML = '<div class="ss-av">SS</div><div class="ss-switch-hint">' +
+    ssD().detectHint +
+    '<br><button class="ss-switch-hint-btn" onclick="ssToggleLang()">' + ssD().detectBtn + '</button>' +
+    '</div>';
+  w.appendChild(d); w.scrollTop = w.scrollHeight;
+}
+
 function ssShowTyping() {
   var w = document.getElementById('ss-messages');
   var d = document.createElement('div');
@@ -1307,54 +1441,67 @@ function ssShowTyping() {
   w.appendChild(d); w.scrollTop = w.scrollHeight;
 }
 function ssRemTyping() { var e=document.getElementById('ss-typ'); if(e) e.remove(); }
-function ssFormat(t) {
-  return t.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
-           .replace(/\*(.*?)\*/g,'<em>$1</em>')
-           .replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank">$1</a>')
-           .replace(/\n/g,'<br>');
-}
 function ssResize(el) { el.style.height='auto'; el.style.height=Math.min(el.scrollHeight,80)+'px'; }
 function ssKey(e) { if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ssSend();} }
 
-async function ssSend() {
-  if (ssBusy) return;
+function ssGetAnswer(text) {
+  var lower = text.toLowerCase();
+  var kws = ssD().keywords;
+  for (var i = 0; i < kws.length; i++) {
+    for (var j = 0; j < kws[i].keys.length; j++) {
+      if (lower.indexOf(kws[i].keys[j]) !== -1) {
+        return ssD().answers[kws[i].topic];
+      }
+    }
+  }
+  return null;
+}
+
+function ssDetectWrongLang(text) {
+  if (ssSwitchHintShown) return false;
+  // Currently in English mode but user wrote Bengali
+  if (ssLang === 'en' && ssIsBengali(text)) return true;
+  // Currently in Bengali mode but user wrote English
+  if (ssLang === 'bn' && ssIsEnglish(text) && !ssIsBengali(text)) return true;
+  return false;
+}
+
+function ssSend() {
   var inp = document.getElementById('ss-input');
   var text = inp.value.trim(); if (!text) return;
   inp.value = ''; inp.style.height = 'auto';
-  document.getElementById('ss-quick').style.display = 'none';
   ssAddMsg('user', text);
-  ssHistory.push({role:'user', content:text});
-  ssBusy = true; document.getElementById('ss-send').disabled = true;
   ssShowTyping();
-  try {
-    var res = await fetch('/.netlify/functions/chat', {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({messages: ssHistory})
-    });
-    var data = await res.json();
-    var reply = data.reply || "Sorry, I couldn't respond right now.";
-    ssHistory.push({role:'assistant', content:reply});
-    ssRemTyping(); ssAddMsg('bot', ssFormat(reply));
-  } catch(err) {
+
+  setTimeout(function() {
     ssRemTyping();
-    ssAddMsg('bot','কিছু একটা সমস্যা হয়েছে। সরাসরি email করো: <a href="mailto:shihabshahriar.contact@gmail.com">shihabshahriar.contact@gmail.com</a>');
-  }
-  ssBusy = false; document.getElementById('ss-send').disabled = false;
+
+    // Wrong language detected — show switch hint first
+    if (ssDetectWrongLang(text)) {
+      ssSwitchHintShown = true;
+      ssAddSwitchHint();
+      // Also try to answer if possible
+      var answer = ssGetAnswer(text);
+      if (answer) {
+        setTimeout(function() { ssAddMsg('bot', answer); }, 400);
+      }
+      return;
+    }
+
+    var answer = ssGetAnswer(text);
+    ssAddMsg('bot', answer || ssD().notFound);
+  }, 600);
 }
 
 function ssQuick(topic) {
-  if (ssBusy) return;
-  document.getElementById('ss-quick').style.display = 'none';
-  var labels = {skills:'🛠 Skills',projects:'💼 Projects',hire:'📩 Hire Me',education:'🎓 Education'};
-  ssAddMsg('user', labels[topic]);
-  ssBusy = true; document.getElementById('ss-send').disabled = true;
+  var btns = ssD().buttons;
+  var label = topic;
+  for (var i = 0; i < btns.length; i++) { if (btns[i].key === topic) { label = btns[i].label; break; } }
+  ssAddMsg('user', label);
   ssShowTyping();
-  setTimeout(function(){
-    ssRemTyping(); ssAddMsg('bot', SS_QUICK[topic]);
-    ssHistory.push({role:'user',content:labels[topic]});
-    ssHistory.push({role:'assistant',content:SS_QUICK[topic].replace(/<[^>]+>/g,'')});
-    ssBusy=false; document.getElementById('ss-send').disabled=false;
+  setTimeout(function() {
+    ssRemTyping();
+    ssAddMsg('bot', ssD().answers[topic]);
   }, 500);
 }
 </script>
